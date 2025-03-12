@@ -1,0 +1,16 @@
+.poke-card {
+    cursor: grab;
+    position: relative;
+}
+
+.poke-card:active {
+    cursor: grabbing;
+}
+
+.transition {
+    transition: transform 0.5s ease;
+}
+
+.dragging {
+    z-index: 100;
+}
