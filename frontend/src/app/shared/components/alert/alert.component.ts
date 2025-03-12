@@ -3,18 +3,17 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Alert, AlertService } from '@shared/services/alert/alert.service';
 
 @Component({
-  selector: 'app-alert',
-  standalone: true,
-  imports: [],
-  templateUrl: './alert.component.html',
-  styleUrl: './alert.component.scss',
-  animations: [
-    trigger('fadeInOut', [
-      transition(':leave', [
-        animate('500ms ease-out', style({ opacity: 0 }))
-      ])
-    ])
-  ]
+    selector: 'app-alert',
+    imports: [],
+    templateUrl: './alert.component.html',
+    styleUrl: './alert.component.scss',
+    animations: [
+        trigger('fadeInOut', [
+            transition(':leave', [
+                animate('500ms ease-out', style({ opacity: 0 }))
+            ])
+        ])
+    ]
 })
 export class AlertComponent {
   alerts: Alert[] = [];
