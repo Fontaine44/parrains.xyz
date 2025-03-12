@@ -1,7 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
   "projects": {
     "parrains": {
       "projectType": "application",
@@ -33,12 +30,16 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/custom.scss",
-              "./node_modules/leaflet/dist/leaflet.css"
+              "src/custom.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": ["mixed-decls", "color-functions", "global-builtin", "import"]
+              }
+            }
           },
           "configurations": {
             "production": {
@@ -102,8 +103,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/custom.scss",
-              "./node_modules/leaflet/dist/leaflet.css"
+              "src/custom.scss"
             ],
             "scripts": []
           }
