@@ -2,3 +2,19 @@ $primary: #ff0000;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons";
+
+// Custom styles
+* {
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+}
+
+// <weight>: Use a value from 200 to 1000
+// <uniquifier>: Use a unique and descriptive class name
+
+// .nunito-<uniquifier> {
+//     font-family: "Nunito", sans-serif;
+//     font-optical-sizing: auto;
+//     font-weight: <weight>;
+//     font-style: normal;
+//   }
