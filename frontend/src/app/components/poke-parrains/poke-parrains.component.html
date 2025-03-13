@@ -1,8 +1,19 @@
-<div class="poke d-flex flex-column align-items-center h-100 w-100 p-3">
+<div class="poke-parrains d-flex flex-column align-items-center h-100 w-100 p-3">
     <h1>PokéParrains</h1>
 
-    <div class="d-flex justify-content-evenly align-items-center h-100 w-100">
-        <app-card url="1.png"></app-card>
-        <app-card url="3.png"></app-card>
+    <div class="d-flex flex-column align-items-center h-100 w-100">
+
+        @if (cards) {
+            <div class="poke-parrains__cards d-flex justify-content-evenly align-items-center h-100 w-100">
+                <app-card url="1.png"></app-card>
+                <app-card url="3.png"></app-card>
+            </div>
+        }
+
+        @if (!cards) {
+            <div class="d-flex align-items-center flex-grow-1">
+                <app-pack url="pack.png" (packOpenedEvent)="packOpened()"></app-pack>
+            </div>
+        }
     </div>
 </div>

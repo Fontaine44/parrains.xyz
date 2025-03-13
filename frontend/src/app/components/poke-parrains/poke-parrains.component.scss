@@ -2,8 +2,12 @@
     flex: 1;
 }
 
-.poke {
+.poke-parrains {
     position: relative;
     overflow: hidden;
     background-color: rgb(208, 255, 239);
+
+    &__cards {
+        animation: fade-in 1s forwards;
+    }
 }

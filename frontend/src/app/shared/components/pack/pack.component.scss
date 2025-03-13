@@ -1,0 +1,32 @@
+.pack {
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 90px rgba(0, 17, 255, 0.7));
+
+    img:hover {
+        animation: pulsate 2s ease-out;
+        animation-iteration-count: infinite;
+    }
+}
+
+.fade-out {
+    animation: fade-out 1s forwards;
+    cursor: default;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.95);
+        opacity: 0.9;
+        filter: drop-shadow(0px 0px 70px rgba(255, 11, 11, 0.781));
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

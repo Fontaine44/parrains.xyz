@@ -9,7 +9,8 @@ import VanillaTilt, { TiltOptions } from 'vanilla-tilt';
 })
 export class CardComponent {
   @Input() url: string = '';
-  @Input() size: number = 400;
+  @Input() size: number = 300;
+  @Input() isDraggable: boolean = false;
 
   @ViewChild('card', { static: true }) cardElement!: ElementRef;
 
@@ -31,15 +32,37 @@ export class CardComponent {
     private _renderer: Renderer2
   ) {}
 
-  @HostListener('mouseenter')
-  onMouseEnter(): void {
-    if (!this.cardElement.nativeElement.vanillaTilt) {
-      VanillaTilt.init(this.cardElement.nativeElement, this.tiltOptions);
+  ngAfterViewInit(): void {
+    if (this.isDraggable) {
+      this.initDraggable();
+    } else {
+      this.initTilt();
     }
   }
 
-  @HostListener('mousedown', ['$event'])
-  onCardMouseDown(event: MouseEvent): void {
+  initDraggable(): void {
+    this.cardElement.nativeElement.style.cursor = 'grab';
+    this.cardElement.nativeElement.addEventListener('mouseenter', this.onMouseEnter.bind(this));
+    this.cardElement.nativeElement.addEventListener('mousedown', this.onMouseDown.bind(this));
+    this.cardElement.nativeElement.addEventListener('mouseup', this.onMouseUp.bind(this));
+    this.cardElement.nativeElement.addEventListener('mousemove', this.onMouseMove.bind(this));
+  }
+
+  initTilt(): void {
+    VanillaTilt.init(this.cardElement.nativeElement, this.tiltOptions);
+  }
+
+  destroyTilt(): void {
+    this.cardElement.nativeElement.vanillaTilt?.destroy();
+  }
+
+  onMouseEnter(): void {
+    if (!this.cardElement.nativeElement.vanillaTilt) {
+      this.initTilt();
+    }
+  }
+
+  onMouseDown(event: MouseEvent): void {
     if (event.button !== 0) { // left click
       return;
     }
@@ -51,13 +74,12 @@ export class CardComponent {
     this.startX = event.clientX - this.offsetX;
     this.startY = event.clientY - this.offsetY;
 
-    this.cardElement.nativeElement.vanillaTilt?.destroy();
+    this.destroyTilt();
 
     this._renderer.addClass(this.cardElement.nativeElement, 'dragging');
   }
 
-  @HostListener('mouseup', ['$event'])
-  onCardMouseUp(): void {
+  onMouseUp(): void {
     if (this.isDragging) {
       this.isDragging = false;
       this._renderer.removeClass(this.cardElement.nativeElement, 'dragging');
@@ -68,8 +90,7 @@ export class CardComponent {
     }
   }
 
-  @HostListener('mousemove', ['$event'])
-  onCardMouseMove(event: MouseEvent): void {
+  onMouseMove(event: MouseEvent): void {
     if (this.isDragging) {
       this.hasMoved = true;
 
@@ -87,7 +108,7 @@ export class CardComponent {
     }
   }
 
-  private resetPosition(): void {
+  resetPosition(): void {
     this.hasMoved = false;
 
     this._renderer.addClass(this.cardElement.nativeElement, 'transition');
@@ -98,8 +119,19 @@ export class CardComponent {
     this.cardElement.nativeElement.addEventListener('transitionend', this.onTransitionEnd.bind(this));
   }
 
-    private onTransitionEnd(): void {
-      this._renderer.removeClass(this.cardElement.nativeElement, 'transition');
+  onTransitionEnd(): void {
+    this._renderer.removeClass(this.cardElement.nativeElement, 'transition');
     this.cardElement.nativeElement.removeEventListener('transitionend', this.onTransitionEnd.bind(this));
+  }
+
+  ngOnDestroy(): void {
+    if (this.isDraggable) {
+      this.cardElement.nativeElement.removeEventListener('mouseenter', this.onMouseEnter.bind(this));
+      this.cardElement.nativeElement.removeEventListener('mousedown', this.onMouseDown.bind(this));
+      this.cardElement.nativeElement.removeEventListener('mouseup', this.onMouseUp.bind(this));
+      this.cardElement.nativeElement.removeEventListener('mousemove', this.onMouseMove.bind(this));
+    }
+
+    this.destroyTilt();
   }
 }
