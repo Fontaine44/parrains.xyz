@@ -14,13 +14,17 @@ export class PokeParrainsComponent {
 
   cards = false;
   loader = false;
-
+  cardsNumbers = [this.randomCard(), this.randomCard(), this.randomCard(), this.randomCard(), this.randomCard()];
 
   packOpened(): void {
     this.loader = true;
     setTimeout(() => {
       this.cards = true;
       this.loader = false;
-    }, 1000);
+    }, 2000);
+  }
+
+  randomCard(): number {
+    return Math.floor(Math.random() * 3) + 1;
   }
 }

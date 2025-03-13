@@ -20,7 +20,7 @@ export class LoaderComponent implements OnChanges {
       this.el.nativeElement.style.display = 'block';
       setTimeout(() => {
         this._renderer.addClass(this.el.nativeElement, 'loaded');
-      }, 1);
+      }, 0);
     }
   }
 }

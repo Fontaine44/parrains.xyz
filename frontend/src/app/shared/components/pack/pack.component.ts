@@ -9,7 +9,7 @@ import VanillaTilt, { TiltOptions } from 'vanilla-tilt';
 })
 export class PackComponent implements AfterViewInit {
 
-  @Input() url: string = '';
+  @Input() src: string = '';
   @Input() size: number = 300;
 
   @Output() packOpenedEvent: EventEmitter<void> = new EventEmitter<void>();

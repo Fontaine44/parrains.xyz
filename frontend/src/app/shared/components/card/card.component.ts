@@ -8,8 +8,8 @@ import VanillaTilt, { TiltOptions } from 'vanilla-tilt';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input() url: string = '';
-  @Input() size: number = 300;
+  @Input() src: string = '';
+  @Input() size: number = 250;
   @Input() isDraggable: boolean = false;
 
   @ViewChild('card', { static: true }) cardElement!: ElementRef;
