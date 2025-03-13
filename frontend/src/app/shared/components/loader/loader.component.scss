@@ -1,0 +1,325 @@
+:host {
+    display: none;
+}
+
+.layer-1 > .path {
+    stroke: rgba(234, 234, 234, 0.5);
+    stroke-width: 15;
+    stroke-dasharray: 1507.2;
+    stroke-dashoffset: 1507.2;
+    visibility: hidden;
+    transform: rotate(-30deg);
+}
+
+:host.loaded .layer-1 > .path {
+    visibility: visible;
+    animation: layer-1 1.25s ease-in;
+}
+
+@keyframes layer-1 {
+    0% {
+        stroke-dasharray: 1507.2;
+        stroke-dashoffset: 1507.2;
+    }
+    75% {
+        stroke-width: 15;
+        stroke-dashoffset: 753.6;
+    }
+    100% {
+        stroke: #eaeaea;
+        stroke-width: 225;
+        stroke-dasharray: 1513.48;
+        stroke-dashoffset: 0;
+        transform: rotate(450deg);
+    }
+}
+
+.layer-2>.path {
+    stroke: rgba(234, 234, 234, 0.3);
+    stroke-width: 20;
+    stroke-dasharray: 1507.2;
+    stroke-dashoffset: 1507.2;
+    visibility: hidden;
+    transform: rotate(-60deg);
+}
+
+:host.loaded .layer-2>.path {
+    visibility: visible;
+    animation: layer-2 1.25s ease-in;
+}
+
+@keyframes layer-2 {
+    0% {
+        stroke-dasharray: 1507.2;
+        stroke-dashoffset: 1507.2;
+    }
+    75% {
+        stroke-width: 20;
+        stroke-dashoffset: 753.6;
+    }
+    100% {
+        stroke: #eaeaea;
+        stroke-width: 60;
+        stroke-dasharray: 1513.48;
+        stroke-dashoffset: 0;
+        transform: rotate(420deg);
+    }
+}
+
+.layer-3>.path {
+    stroke: rgba(234, 234, 234, 0.8);
+    stroke-width: 40;
+    stroke-dasharray: 1130.4;
+    stroke-dashoffset: 1130.4;
+    visibility: hidden;
+    transform: rotate(-70deg);
+}
+
+:host.loaded .layer-3 > .path {
+    visibility: visible;
+    animation: layer-3 1.25s ease-in;
+}
+
+@keyframes layer-3 {
+    0% {
+        stroke-dasharray: 1130.4;
+        stroke-dashoffset: 1130.4;
+    }
+    75% {
+        stroke-width: 40;
+        stroke-dashoffset: 565.2;
+    }
+    100% {
+        stroke: #eaeaea;
+        stroke-width: 120;
+        stroke-dasharray: 1136.68;
+        stroke-dashoffset: 0;
+        transform: rotate(410deg);
+    }
+}
+
+.layer-4 > .path {
+    stroke: rgba(234, 234, 234, 0.6);
+    stroke-width: 20;
+    stroke-dasharray: 1507.2;
+    stroke-dashoffset: 1507.2;
+    visibility: hidden;
+    transform: rotate(-90deg);
+}
+
+:host.loaded .layer-4>.path {
+    visibility: visible;
+    animation: layer-4 1.25s ease-in;
+}
+
+@keyframes layer-4 {
+    0% {
+        stroke-dasharray: 1507.2;
+        stroke-dashoffset: 1507.2;
+    }
+    75% {
+        stroke-width: 20;
+        stroke-dashoffset: 753.6;
+    }
+    100% {
+        stroke: #eaeaea;
+        stroke-width: 60;
+        stroke-dasharray: 1513.48;
+        stroke-dashoffset: 0;
+        transform: rotate(390deg);
+    }
+}
+
+.layer-5>.path {
+    stroke: rgba(234, 234, 234, 0.5);
+    stroke-width: 30;
+    stroke-dasharray: 1884;
+    stroke-dashoffset: 1884;
+    visibility: hidden;
+    transform: rotate(-20deg);
+}
+
+:host.loaded .layer-5 > .path {
+    visibility: visible;
+    animation: layer-5 1.25s ease-in;
+}
+
+@keyframes layer-5 {
+    0% {
+        stroke-dasharray: 1884;
+        stroke-dashoffset: 1884;
+    }
+    75% {
+        stroke-width: 30;
+        stroke-dashoffset: 942;
+    }
+    100% {
+        stroke: #eaeaea;
+        stroke-width: 90;
+        stroke-dasharray: 1890.28;
+        stroke-dashoffset: 0;
+        transform: rotate(460deg);
+    }
+}
+
+.layer-6 > .path {
+    stroke: rgba(234, 234, 234, 0.2);
+    stroke-width: 45;
+    stroke-dasharray: 2386.4;
+    stroke-dashoffset: 2386.4;
+    visibility: hidden;
+    transform: rotate(-80deg);
+}
+
+:host.loaded .layer-6 > .path {
+    visibility: visible;
+    animation: layer-6 1.25s ease-in;
+}
+
+@keyframes layer-6 {
+    0% {
+        stroke-dasharray: 2386.4;
+        stroke-dashoffset: 2386.4;
+    }
+    75% {
+        stroke-width: 45;
+        stroke-dashoffset: 1193.2;
+    }
+    100% {
+        stroke: #eaeaea;
+        stroke-width: 135;
+        stroke-dasharray: 2392.68;
+        stroke-dashoffset: 0;
+        transform: rotate(400deg);
+    }
+}
+
+.layer-7 > .path {
+    stroke: #eaeaea;
+    stroke-width: 75;
+    stroke-dasharray: 2826;
+    stroke-dashoffset: 2826;
+    visibility: hidden;
+    transform: rotate(-10deg);
+}
+
+:host.loaded .layer-7 > .path {
+    visibility: visible;
+    animation: layer-7 1.25s ease-in;
+}
+
+@keyframes layer-7 {
+    0% {
+        stroke-dasharray: 2826;
+        stroke-dashoffset: 2826;
+    }
+    75% {
+        stroke-width: 75;
+        stroke-dashoffset: 1413;
+    }
+    100% {
+        stroke: #eaeaea;
+        stroke-width: 225;
+        stroke-dasharray: 2832.28;
+        stroke-dashoffset: 0;
+        transform: rotate(470deg);
+    }
+}
+
+.layer-8 > .path {
+    stroke: rgba(234, 234, 234, 0.5);
+    stroke-width: 250;
+    stroke-dasharray: 3391.2;
+    stroke-dashoffset: 3391.2;
+    visibility: hidden;
+    transform: rotate(-70deg);
+}
+
+:host.loaded .layer-8 > .path {
+    visibility: visible;
+    animation: layer-8 1.25s ease-in;
+}
+
+@keyframes layer-8 {
+    0% {
+        stroke-dasharray: 3391.2;
+        stroke-dashoffset: 3391.2;
+    }
+    75% {
+        stroke-width: 250;
+        stroke-dashoffset: 1695.6;
+    }
+    100% {
+        stroke: #eaeaea;
+        stroke-width: 750;
+        stroke-dasharray: 3397.48;
+        stroke-dashoffset: 0;
+        transform: rotate(410deg);
+    }
+}
+
+:host {
+    display: none;
+}
+
+.loader {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    transform: scale(1);
+    z-index: 9999;
+}
+
+:host.loaded .loader {
+    transform: scale(0);
+    transition: all 2.25s ease-in-out 1.25s;
+}
+
+.loader g,
+.loader circle {
+    transform-origin: 50% 50%;
+}
+
+.core > .path {
+    fill: #fff;
+    visibility: hidden;
+    transform: scale(1, 1);
+    transition: all 0.625s ease-in-out 0.15625s;
+}
+
+:host.loaded .core > .path {
+    animation: core-loaded 2.5s ease-in-out;
+}
+
+@keyframes core-loaded {
+    0% {
+        visibility: hidden;
+        transform: scale(1, 1);
+    }
+    25%, 85% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1000, 1000);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1, 1);
+    }
+}
+
+.center,
+.loader,
+.page {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.loader,
+.core,
+.spinner,
+.path {
+    transform: translate3d(0, 0, 0);
+}
