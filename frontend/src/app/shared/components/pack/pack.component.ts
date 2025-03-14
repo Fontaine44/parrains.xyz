@@ -30,7 +30,15 @@ export class PackComponent implements AfterViewInit {
   }
 
   openPack(): void {
+    let audio = new Audio('ripping.mp3');
+    audio.volume = 0.1;
+    audio.play();
+    audio = new Audio('reveal.mp3');
+    audio.volume = 0.1;
+    audio.play();
+
     this._renderer.addClass(this.packElement.nativeElement, 'fade-out');
+
     setTimeout(() => {
       this.packOpenedEvent.emit();
     }, 800);

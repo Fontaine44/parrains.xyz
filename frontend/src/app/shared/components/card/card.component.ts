@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, Renderer2, ViewChild } from '@angular/core';
 import VanillaTilt, { TiltOptions } from 'vanilla-tilt';
 
 @Component({
@@ -16,6 +16,7 @@ export class CardComponent {
 
   private isDragging = false;
   private hasMoved = false;
+  private isFlipped = false;
   private startX = 0;
   private startY = 0;
   private offsetX = 0;
@@ -56,6 +57,24 @@ export class CardComponent {
     this.cardElement.nativeElement.vanillaTilt?.destroy();
   }
 
+  flipCard(): void {
+    if (!this.isFlipped) {
+      this.destroyTilt();
+      this._renderer.addClass(this.cardElement.nativeElement, 'flipped');
+      this._renderer.addClass(this.cardElement.nativeElement, 'no-shadow');
+      
+      const audio = new Audio('flip.mp3');
+      audio.volume = 0.1;
+      audio.play();
+
+      setTimeout(() => {
+        this._renderer.removeClass(this.cardElement.nativeElement, 'no-shadow');
+        this.initTilt();
+        this.isFlipped = true;
+      }, 800);
+    }
+  }
+
   onMouseEnter(): void {
     if (!this.cardElement.nativeElement.vanillaTilt) {
       this.initTilt();
@@ -63,7 +82,7 @@ export class CardComponent {
   }
 
   onMouseDown(event: MouseEvent): void {
-    if (event.button !== 0) { // left click
+    if (event.button !== 0 || !this.isFlipped) { // left click or not flipped
       return;
     }
 

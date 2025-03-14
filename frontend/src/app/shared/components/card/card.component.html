@@ -1,3 +1,12 @@
-<div #card class="poke-card" [style.border-radius.px]="size/20">
-    <img [src]="src" alt="Card Image" height=auto [style.width.px]="size">
+<div #card class="poke-card" [style.height.px]="size*1.37" [style.width.px]="size" [style.border-radius.px]="size/20" (click)="flipCard()">
+
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img [src]="src" alt="Card Image" [style.border-radius.px]="size/20">
+        </div>
+    
+        <div class="flip-card-back">
+            <img src="back.webp" alt="Card Image" [style.border-radius.px]="size/20">
+        </div>
+    </div>
 </div>
