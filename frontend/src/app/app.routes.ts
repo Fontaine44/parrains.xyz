@@ -13,11 +13,12 @@ export const routes: Routes = [
   {
     path: 'pokeparrains',
     component: PokeParrainsComponent,
-    canActivate: [PokeParrainsGuard]
+    // canActivate: [PokeParrainsGuard]
   },
   {
     path: 'm/pokeparrains',
     component: PokeParrainsMobileComponent,
+    // canActivate: [PokeParrainsGuard]
   },
   {
     path: '**',

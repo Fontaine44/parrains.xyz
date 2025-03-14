@@ -1,5 +1,12 @@
 :host {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .layer-1 > .path {
@@ -307,19 +314,8 @@
     }
 }
 
-.center,
-.loader,
-.page {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-}
-
 .loader,
 .core,
-.spinner,
 .path {
     transform: translate3d(0, 0, 0);
 }

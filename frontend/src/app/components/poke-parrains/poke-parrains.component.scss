@@ -4,10 +4,12 @@
 
 .poke-parrains {
     position: relative;
-    overflow: hidden;
-    background-color: #ffc5aa;
+    overflow-y: hidden;
+    background-color: #87cfff;
 
     &__cards {
+        opacity: 0;
         animation: fade-in 1s forwards;
+        animation-delay: 2s;
     }
 }

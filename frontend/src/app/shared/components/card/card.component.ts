@@ -24,7 +24,7 @@ export class CardComponent {
   private tiltOptions: TiltOptions = {
     max: 20,
     speed: 400,
-    scale: 1.04,
+    scale: 1.1,
     glare: true,
     'max-glare': 0.5
   }

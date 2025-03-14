@@ -23,6 +23,8 @@
 
 .flipped .flip-card-inner {
     transform: rotateY(180deg);
+    animation: shake 1s cubic-bezier(.36, .07, .19, .97) both;
+    animation-delay: 1s;
     cursor: default;
 }
 

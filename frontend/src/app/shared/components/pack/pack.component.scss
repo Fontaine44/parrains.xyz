@@ -1,6 +1,6 @@
 .pack {
     cursor: pointer;
-    filter: drop-shadow(0px 0px 90px rgba(0, 17, 255, 0.7));
+    filter: drop-shadow(0px 0px 80px rgba(255, 162, 0, 0.93));
 
     img:hover {
         animation: pulsate 2s ease-out;
@@ -9,7 +9,7 @@
 }
 
 .fade-out {
-    animation: fade-out 1s forwards;
+    animation: fade-out 1s forwards, shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
     cursor: default;
 }
 
@@ -28,5 +28,28 @@
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, -5px, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, -1px, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 3px, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 2px, 0);
     }
 }

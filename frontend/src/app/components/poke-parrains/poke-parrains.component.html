@@ -1,17 +1,17 @@
-<div class="poke-parrains d-flex flex-column align-items-center h-100 w-100 p-3">
+<div class="poke-parrains d-flex flex-column align-items-center h-100 w-100 gap-2 p-3">
     <h1 class="align-self-start">PokéParrains</h1>
 
-    <div class="d-flex flex-column align-items-center h-100 w-100">
+    <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
         <app-loader [trigger]="loader"></app-loader>
 
-        @if (cards) {
-            <div class="poke-parrains__cards d-flex justify-content-evenly align-items-center h-100 w-100">
-                @for (card of cardsNumbers; track card) {
-                    <app-card [src]="card+'.png'"></app-card>
+        @if (isOpened) {
+            <div class="poke-parrains__cards d-flex justify-content-center flex-wrap gap-3">
+                @for (card of cards; track card.id) {
+                    <app-card [src]="card.number+'.png'"></app-card>
                 }
             </div>
         } @else {
-            <div class="d-flex align-items-center flex-grow-1">
+            <div class="d-flex align-items-center">
                 <app-pack src="pack.png" (packOpenedEvent)="packOpened()"></app-pack>
             </div>
         }

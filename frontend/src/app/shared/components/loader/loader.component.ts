@@ -17,7 +17,7 @@ export class LoaderComponent implements OnChanges {
 
   ngOnChanges(): void {
     if (this.trigger) {
-      this.el.nativeElement.style.display = 'block';
+      this.el.nativeElement.style.display = 'flex';
       setTimeout(() => {
         this._renderer.addClass(this.el.nativeElement, 'loaded');
       }, 0);
